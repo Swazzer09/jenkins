@@ -1,0 +1,57 @@
+How to download the maven ?
+A-
+1] Website to download Maven - cldcdn.apache.org
+2] maven > maven-3 > 3.6.3 > binaries > apache-maven-3.6.3-bin.tar.gz 
+3] go to mobaXterm  -
+[root@ip-172-31-1-141 ~]# wget https://dlcdn.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+
+To untar and unzip -
+4] [root@ip-172-31-1-141 ~]# tar -zxvf apache-maven-3.6.3-bin.tar.gz
+5] [root@ip-172-31-1-141 ~]# cd apache-maven-3.6.3/
+6] [root@ip-172-31-1-141 apache-maven-3.6.3]# yum install java-1.8.0-openjdk -y
+To check version of java -> 
+[root@ip-172-31-1-141 ~]#   java -version
+7] [root@ip-172-31-1-141 apache-maven-3.6.3]# yum install maven tree -y
+To check version of maven -> 
+8] [root@ip-172-31-1-141 ~]# mvn archetype:generate
+
+\\\\\\Enter untill you see groupID/////
+
+Define value for property 'groupId': CT
+Define value for property 'artifactId': swiggy
+Define value for property 'version' 1.0-SNAPSHOT: :
+Define value for property 'package' CT: : devops
+Confirm properties configuration:
+groupId: CT
+artifactId: swiggy
+version: 1.0-SNAPSHOT
+package: devops
+ Y: : y
+
+9] [root@ip-172-31-1-141 apache-maven-3.6.3]# cd swiggy
+10] [root@ip-172-31-1-141 swiggy]# tree
+11] [root@ip-172-31-1-141 swiggy]# cat src/main/java/devops/App.java
+
+Give "tree" command after every line to check
+
+12] [root@ip-172-31-1-141 swiggy]# cat src/test/java/devops/AppTest.java
+You will get - target folder after compile
+13] [root@ip-172-31-1-141 swiggy]# mvn compile
+You will get - AppTest.class 
+14] [root@ip-172-31-1-141 swiggy]# mvn test
+You will get - jar file
+15] [root@ip-172-31-1-141 swiggy]# mvn package
+16] [root@ip-172-31-1-141 swiggy]# mvn install
+17] Copy 
+/root/.m2/repository/CT/swiggy/1.0-SNAPSHOT/swiggy-1.0-SNAPSHOT.pom
+18] [root@ip-172-31-1-141 swiggy]# cd /root/.m2/repository/CT/swiggy/1.0-SNAPSHOT/
+19] [root@ip-172-31-1-141 1.0-SNAPSHOT]# cd ..
+19.1] [root@ip-172-31-1-141 1.0-SNAPSHOT]# ll
+to generate - .war file
+20] [root@ip-172-31-1-141 1.0-SNAPSHOT]# mvn deploy
+Build FAILURE
+21] [root@ip-172-31-1-141 swiggy]# mvn clean
+22] [root@ip-172-31-1-141 swiggy]# mv clean package
+23] [root@ip-172-31-1-141 swiggy]# vim pom.xml
+
+
